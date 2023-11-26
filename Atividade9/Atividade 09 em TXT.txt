@@ -1,0 +1,8 @@
+select (select a.nomealuno from ALUNOS a
+        where a.alunoid = n.alunoid) as nm_aluno,
+        listaGG(n.disciplina|| ' - ' || n.nota , ' ,') as disciplinas,
+        round(avg(n.nota),2) as Media_notas
+    
+from nt n
+
+group by n.alunoid
